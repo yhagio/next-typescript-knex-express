@@ -1,0 +1,27 @@
+{
+    "app_host": "localhost",
+    "app_port": "3000",
+    "node_env": "development",
+    "errorStatus": {
+        "OperationError": 503,
+        "InternalError": 500,
+        "NotFoundError": 404,
+        "ForbiddenError": 403,
+        "UnauthorizedError": 401,
+        "InvalidError": 400
+    },
+    "knex": {
+        "client": "postgres",
+        "connection": {
+            "host": "localhost",
+            "port": 5432,
+            "database": "sensei_next_dev",
+            "user": "dev_user",
+            "password": "123test"
+        }
+    },
+    "jwt": {
+        "secret": "jh489384fdh2332e8hfwjhs",
+        "expiresin": "8h"
+    }
+}
