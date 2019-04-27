@@ -1,7 +1,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/yhagio/next-typescript-knex-express/blob/master/LICENSE)
 
+# Typescript Next.js Express Postgres starter
 
-# Run locally
+
+### Run locally
 Clone this repo
 
 
@@ -20,7 +22,7 @@ docker-compose up
 ```
 
 
-# Typescript Next.js Express Postgres
+---
 
 - [x] User Signup
 - [x] User Login
