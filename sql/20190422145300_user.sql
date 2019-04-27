@@ -1,11 +1,11 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-    user_id uuid DEFAULT gen_random_uuid (),
-    username VARCHAR NOT NULL,
-    email VARCHAR NOT NULL,
+    id uuid DEFAULT gen_random_uuid (),
+    username VARCHAR NOT NULL UNIQUE,
+    email VARCHAR NOT NULL UNIQUE,
     password VARCHAR NOT NULL,
-    PRIMARY KEY (user_id)
+    PRIMARY KEY (id)
 );
 
 -- ROLLBACK

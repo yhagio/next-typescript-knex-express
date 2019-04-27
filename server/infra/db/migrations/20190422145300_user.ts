@@ -1,4 +1,4 @@
-exports.up = async knex => {
+exports.up = async (knex: any) => {
     await knex.raw(`
     CREATE EXTENSION IF NOT EXISTS pgcrypto;
     DROP TABLE IF EXISTS users;
@@ -12,7 +12,7 @@ exports.up = async knex => {
     `);
 };
 
-exports.down = async knex => {
+exports.down = async (knex: any) => {
     await knex.raw(`
     DROP EXTENSION pgcrypto;
     DROP TABLE IF EXISTS users;

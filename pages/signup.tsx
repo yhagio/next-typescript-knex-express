@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Router from 'next/router';
 
 import { signupUser } from '../lib/auth';
 
@@ -40,12 +41,16 @@ class Signup extends React.Component<IState, any> {
         this.setState({ isLoading: true, error: '' });
 
         signupUser(user)
-            .then(() => {
+            .then(({ user }) => {
                 this.setState({
+                    username: '',
+                    email: '',
+                    password: '',
                     error: '',
                     success: true,
                     isLoading: false
                 });
+                Router.push(`/profile/${user.id}`);
             })
             .catch(this.showError);
     };

@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 import { IConfig } from '../../shared/config';
 import { IAuthService } from './interface';
 
 export default class AuthService implements IAuthService {
-    constructor(private config: IConfig) {}
+    constructor(private config: IConfig) { }
 
     async checkPassword(
         inputPassword: string,

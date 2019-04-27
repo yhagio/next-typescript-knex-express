@@ -6,7 +6,7 @@ import {
 } from './interface';
 
 export default class UserService implements IUserService {
-    constructor(private validator: IUserService) {}
+    constructor(private validator: IUserService) { }
 
     async create(user: IUserSignUp): Promise<IUserAccount> {
         return this.validator.create(user);

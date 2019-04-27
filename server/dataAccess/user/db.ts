@@ -1,5 +1,5 @@
 import Knex from 'knex';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import {
     IUserSignUp,
     IUserAccount,
@@ -8,7 +8,7 @@ import {
 import { IUserDataAccess } from './interface';
 
 export default class UserDataAccess implements IUserDataAccess {
-    constructor(private knex: Knex) {}
+    constructor(private knex: Knex) { }
 
     async create(user: IUserSignUp): Promise<IUserAccount> {
         user.password = await bcrypt.hash(user.password, 10);

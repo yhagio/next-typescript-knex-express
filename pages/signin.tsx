@@ -37,6 +37,12 @@ class Signin extends React.Component<IState, any> {
         this.setState({ isLoading: true, error: '' });
         signinUser(user)
             .then(({ user }) => {
+                this.setState({
+                    email: '',
+                    password: '',
+                    error: '',
+                    isLoading: false
+                });
                 Router.push(`/profile/${user.id}`);
             })
             .catch(this.showError);
