@@ -4,8 +4,8 @@ exports.up = async (knex: any) => {
     DROP TABLE IF EXISTS users;
     CREATE TABLE users (
         id uuid DEFAULT gen_random_uuid (),
-        username VARCHAR NOT NULL,
-        email VARCHAR NOT NULL,
+        username VARCHAR NOT NULL UNIQUE,
+        email VARCHAR NOT NULL UNIQUE,
         password VARCHAR NOT NULL,
         PRIMARY KEY (id)
     );

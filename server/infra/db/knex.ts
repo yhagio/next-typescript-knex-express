@@ -20,8 +20,9 @@ export default class DB {
         );
     }
 
+
     async migrate(): Promise<void> {
-        const migrationKnex = await this.getMigrations();
+        const migrationKnex = this.getMigrations();
         await migrationKnex.migrate.latest();
         await migrationKnex.destroy();
     }
