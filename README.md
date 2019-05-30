@@ -24,6 +24,16 @@ docker-compose up
 
 ---
 
+To go inside the db container and check
+```
+docker ps
+docker exec -it <container id> sh
+# inside the container
+psql -U dev_user -d sensei_next_dev
+# inside the Postgres in the container
+```
+---
+
 - [x] User Signup
 - [x] User Login
 - [x] User Logout

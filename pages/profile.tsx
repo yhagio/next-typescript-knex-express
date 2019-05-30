@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { authInitialProps } from '../lib/auth';
 import { getUser } from '../lib/api';

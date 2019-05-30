@@ -2,12 +2,13 @@ version: '3.7'
 
 services:
   sensei_next_db:
-    image: 'postgres:10.5'
+    image: postgres:11.2
     container_name: sensei_next_db
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    # ports:
-    #   - 5432:5432
+      - mydb_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     restart: always
 
   sensei_next:
@@ -34,3 +35,6 @@ services:
     restart: always
     depends_on:
       - sensei_next_db
+
+volumes:
+  mydb_data:

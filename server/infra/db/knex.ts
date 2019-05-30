@@ -35,6 +35,6 @@ export default class DB {
                 tableName: 'knex_migrations'
             }
         };
-        return Knex(migrationConfig);
+        return Knex(migrationConfig as any);
     }
 }
